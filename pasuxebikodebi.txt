@@ -1,0 +1,1030 @@
+MATEMATIKURIII  AMOCANEBII --->>>
+
+1 ) შეადგინეთ პროგრამა C ++, რომელიც გამოითვლის y = x4 -2x2 +7 ფუნქციის მნიშვნელობებს და წარმოადგენს ფუნქციისა და არგუმენტის მნიშვნელობათა
+ცხრილს, სადაც x არგუმენტი [-4;8] ინტერვალში იცვლება h=1,5 ბიჯით. ამასთან, გამოთვალეთ ფუნქციის უარყოფითი მნიშვლებოსი ნამრავლი.
+#include <iostream>
+
+
+void function(int x) {
+    double res = x*x*x*x + 2*x*x + 7;
+    std::cout << "Result: " << res << std::endl;
+}
+
+int main() {
+    double a, b, h;
+
+    a = -4;
+    b = 8;
+    h = 1.5;
+
+    int negativeMult = 1;
+
+    for(int i = a; i < b; i += h){
+        function(i);
+        if(i < 0){
+            negativeMult *= i;
+        }
+    }
+
+    std::cout << "Negative mult: " << negativeMult << std::endl;
+
+
+
+
+    return 0;
+}
+
+
+2) შეადგინეთ პროგრამა C ++, შეადგინეთ პროგრამა, რომელიც წარმოადგენს ერთიდან 20-ის ჩათვლით ყველა ნატურალური რიცხვის კვადრატის მნიშვნელობას,
+გარდა 5-ის, 10-ის და 15-ის კვადრატებისა (გამოიყენეთ continue ოპერატორი)
+
+
+#include <iostream>
+#include <cmath>
+
+int main() {
+
+    for(int i = 1; i <= 20; i++){
+        if (i == 5 || i == 10 || i == 15){
+            continue;
+        }
+        else {
+            std::cout << pow(i, 2) << std::endl;
+        }
+    }
+
+    return 0;
+}
+
+
+3 ) შეადგინეთ პროგრამა C ++, შეადგინეთ პროგრამა, რომელიც გამოთვლის გამოსახულებათა შემდეგი სისტემის მნიშ
+
+y= sin(2-x)+1/ fesvi e xarisxat ragaca, სადაც x=2, a=2.8 b=4,2 c=8 a=1
+
+
+z = ragac ragaceebs.
+
+#include <iostream>
+#include <cmath>
+
+double solution(double x, double A, double b, double c, double a){
+    double y = (sin(2 - x) + 1)/sqrt(exp(A - x));
+    double z = 0;
+
+    if (y == -1){
+        z = c;
+    }
+    else if (y < 1){
+        z = a*pow(x, 3) - 2;
+    }
+    else if (y == 1) {
+        z = a * pow(x, 2) + b*x + c;
+    }
+    else {
+        z = 2*x - 3;
+    }
+
+    return z;
+
+}
+
+int main() {
+
+    double res = solution(2, 2.8, -4.2, 8, 1);
+    std::cout << res << std::endl;
+
+    return 0;
+}
+
+4) შეადგინეთ პროგრამა C ++, შეადგინეთ პროგრამა, რომელიც გამოთვლის y= x2 +2x +1 ფუნქციის მნიშნელობებს და წარმოადგენს ფუნქციისა და არგუმენტების
+მნიშვნელობათა ცხრილს, სადაც  x არგუმენტი [1;10] ინტერვალში იცვლება h=1.5 ბიჯით. ამასთან, თუ ფუნქციის მნიშვნელობა აღმოჩნდება 50ზე მეტი,
+გამოთვლილი პროცესი შეწყვიტეტ(გამოიყენეთ break  ოპერატორი)
+
+#include <iostream>
+#include <cmath>
+
+double function(double x)
+{
+    double y = pow(x, 3) + 2 * x + 1;
+    return y;
+}
+
+int main()
+{
+    double a, b, h;
+    a = 1;
+    b = 10;
+    h = 1.5;
+
+    for (int i = a; i <= b; i += h)
+    {
+        double result = function(i);
+
+        if (result > 50)
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "x = " << i << " y = " << result << std::endl;
+        }
+    }
+
+    return 0;
+}
+
+
+
+5 ) შეადგინეთ პროგრამა C ++, do/while ციკლის ოპერატორის გამოყენებით შეადგინეთ პროგრამა, რომელიც გამოთვლის y=3x2+5x ფუნქციის მნიშვნელობებს 
+და წარმოადგენს ფუნქციისა და არგუმენტების მნიშვნელობათა ცხრილს, სადაც x არგუმენტი [-2;2] ინტერვალში იცვლება h= 1,5 ბიჯით.
+
+
+#include <iostream>
+#include <cmath>
+
+void function(int x){
+    double res = 3*pow(x, 2) + 5 * x;
+    std::cout << x << ": " << res << std::endl;
+}
+
+int main() {
+    double a, b, h;
+    a = -2;
+    b = 2;
+    h = 1.5;
+
+    do {
+        function(a);
+        a += h;
+
+    } while (a < b);
+
+
+
+
+    return 0;
+}
+
+
+
+
+6) შეადგინეთ პროგრამა C ++, do/while ციკლის ოპერატორი გამოყენებით შეადგინეთ პროგრამა, რომელიც გამოთვლის y= x2 +5 ფუნქციის მნიშვნელობებს და წარმოადგენს
+ფუნქციისა და არგუმენტების მნიშვნელობათა ცხრილს, სადაც x არგუმენტი [-5;5] ინტერვალში იცვლება h=1.5 ბიჯით.
+
+#include <iostream>
+#include <cmath>
+
+double function(double x) {
+    double y = pow(x, 2) + 5;
+    return y;
+}
+
+int main() {
+    double a, b, h;
+    a = -5;
+    b = 5;
+    h = 1.5;
+
+    do {
+        double result = function(a);
+
+        std::cout << "x = " << a << " y = " << result << std::endl;
+
+        a += h;
+    } while (a <= b);
+
+    return 0;
+}
+
+
+
+MATRICULI AMOCANEBI ------>>>>>>>>>>>>>
+
+
+
+1. მოცემულია მატრიცა A[5x5]. შეადგინეთ პროგრამა,რომელიც მატრიცის უარყოფითი მნიშვნელობის მქონე ელემენტებს შეცვლის ერთით და გამოთვლის მიღბული მატრიცის
+ელემენტების საშუალო არითმეტიკულს.
+
+
+#include <iostream>
+
+
+
+// write a function that prints a matrix
+void printMatrix(int matrix[5][5], int row, int col) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    // create 5x5 matrix and fill it randomly with numbers from 0 to 9
+    int row, col, total, sum;
+    row = 5;
+    col = 5;
+    total = row * col;
+
+    sum = 0;
+    int matrix[5][5];
+
+    // fill matrix with random numbers including negative numbers
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+    printMatrix(matrix, row, col);
+
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if (matrix[i][j] < 0){
+                matrix[i][j] = 1;
+            }
+        }
+    }
+
+    printMatrix(matrix, row, col);
+
+    for(int i = 0; i < row; i++){
+        for (int j = 0; j < col; j++){
+            sum += matrix[i][j];
+        }
+    }
+
+    double result = sum / total;
+    std::cout << "Average: " << result << std::endl;
+
+
+    return 0;
+}
+
+
+2. მოცემულია კვადრატული მატრიცა B[4x4]. შეადგინეთ პროგრამა, რომელიც დაბეჭდავს მატრიცის მოდულით უდიდესი მნიშნელობის მქონე ელემენტეს და ამ ელემენტის 
+შემცვლელ სვეტს.
+
+
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+
+void printMatrix(int matrix[5][5], int row, int col) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+// find largest number with absolute value in matrix
+void findLargest(int matrix[5][5], int row, int col){
+    int largest = matrix[0][0];
+    int column = 0;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if (abs(matrix[i][j]) > abs(largest)){
+                largest = matrix[i][j];
+                col = j;
+            }
+        }
+    }
+    std::cout << "Largest number with absolute value is: " << largest << " and it's in column: " << column << std::endl;
+}
+
+int main() {
+    srand(time(NULL));
+    int row, col;
+    row = 5;
+    col = 5;
+
+    int matrix[5][5];
+
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    printMatrix(matrix, row, col);
+    findLargest(matrix, row, col);
+
+
+    return 0;
+
+}
+
+
+
+
+3. მოცემულია მატრიცა C[2x4]. შეადგინეთ პროგრამა,რომელიც გამოთვლის მატრიცის დადებითი ელემენტების ჯამს, უარყოფითი მნიშვნელობის მქონე ელმენტის ნამრავლს 
+და მოძებნის მათ შორის უმცირეს შედეგს.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+
+void printMatrix(int matrix[2][4], int row, int col) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+double positiveSum(int matrix[2][4], int row, int col){
+    double sum = 0;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if (matrix[i][j] > 0){
+                sum += matrix[i][j];
+            }
+        }
+    }
+    return sum;
+}
+
+double findNegativeMulti(int matrix[2][4], int row, int col){
+    double multi = 1;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if (matrix[i][j] < 0){
+                multi *= matrix[i][j];
+            }
+        }
+    }
+    return multi;
+}
+
+int main() {
+    srand(time(NULL));
+    int row, col;
+    row = 2;
+    col = 4;
+
+    int matrix[2][4];
+
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+    printMatrix(matrix, row, col);
+    double sum = positiveSum(matrix, row, col);
+    std::cout << "Sum of positive numbers: " << sum << std::endl;
+    double multi = findNegativeMulti(matrix, row, col);
+    std::cout << "Multiplication of negative numbers: " << multi << std::endl;
+
+    double larger = sum > multi ? sum : multi;
+    std::cout << "Larger number is: " << larger << std::endl;
+
+
+    return 0;
+}
+
+
+
+4. მოცემულია კვადრატული მატრიცა M[3x3] . შეადგინეთ პროგრამა, რომელიც ადგილებს შეუცვლის იმ სვეტსა და სტრიქონს, რომელთა გადაკვეთაზეც იმყოფება მატრიცის
+უდიდესი მნიშვნელობის მქონე ელემენტი.
+
+
+
+
+
+5. მოცემულია კვადრატული მატრიცა N[4x4]. შეადგინეთ პროგრამა რომელიც გამოთვლის მატრიცის ელემენტების ჯამებს სვეტების მიხედვით და დაბეჭდავს იმ სვეტის ელემენტებს,
+რომელთა ჯამიც მაქსიმალურია.
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+void printSumofRows(int matrix[4][4], int row, int col){
+    double sum = 0;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            sum += matrix[i][j];
+        }
+
+        std::cout << "Sum of " << i + 1 << " row is: " << sum << std::endl;
+        sum = 0;
+    }
+}
+
+void printLargestSumRow(int matrix[4][4], int row, int col){
+    double sum = 0;
+    int rowIndex = 0;
+
+    for (int i = 0; i < row; i++){
+        for (int j = 0; j < col; j++){
+            if(matrix[i][j] > sum){
+                sum = matrix[i][j];
+                rowIndex = i;
+            }
+        }
+    }
+    for(int j = 0; j < col; j++){
+        std::cout << matrix[rowIndex][j] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    srand(time(NULL));
+    int row, col;
+    row = 4;
+    col = 4;
+
+    int matrix[4][4];
+
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }    
+
+    printSumofRows(matrix, row, col);
+    printLargestSumRow(matrix, row, col);
+
+    return 0;
+}
+
+
+6. მოცემულია კვადრატული მატრიცა B[3x3]. შეადგინეთ პროგრამა რომელიც გამოთვლის მატრიცის ელემენტების ნამრავლს სტრიქონების მიხედვით და დაბეჭდავს იმ სტრიქონის
+ელემენტებს, რომელთ ნამრავლიც მინიმალურია.
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+void findMultiplicationOfRows(int matrix[3][3]){
+    int multiplication = 1;
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            multiplication *= matrix[i][j];
+        }
+        std::cout << "Multiplication of " << i + 1 << " row is: " << multiplication << std::endl;
+        multiplication = 1;
+    }
+}
+
+void printLowestMultiplicationRow(int matrix[3][3]){
+    int multiplication = 1;
+    int rowIndex = 0;
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            multiplication *= matrix[i][j];
+        }
+        if(multiplication > multiplication){
+            multiplication = multiplication;
+            rowIndex = i;
+        }
+    }
+    for(int j = 0; j < 3; j++){
+        std::cout << matrix[rowIndex][j] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    srand(time(NULL));
+
+    int matrix[3][3];
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+    findMultiplicationOfRows(matrix);
+    printLowestMultiplicationRow(matrix);
+
+
+    return 0;
+}
+
+7. მოცემულია კვადრატული მატრიცა C[3x3]. შეადგინეთ პროგრამა რომელიც მოახდენს მატრიცის ტრანსპონირებას და დაბეჭდავს Ct მატრიცას.
+ 
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+
+// write a program to transpose a matrix
+
+void printMatrix(int matrix[3][3]){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void transposeMatrix(int matrix[3][3]){
+    int temp;
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            if(i < j){
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+    }
+    std::cout << "Transposed matrix is: " << std::endl;
+    printMatrix(matrix);
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[3][3];
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+    printMatrix(matrix);
+    transposeMatrix(matrix);
+
+    return 0;
+}
+
+
+
+
+8. მოცემულია კვადრატული მატრიცა B[3x4]. შეადგინეთ პროგრამა რომელიც ადგილებს შეუცვლის მატრიცის მეორე სვეტსა და მოდულით უმცირესი მნიშვნელობის მქონე ელემტენის
+შემცველ სვეტს.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+
+void printMatrix(int matrix[3][4]){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int findLowestAbsoluteNumberRow(int matrix[3][4]){
+    int lowestAbsoluteNumber = abs(matrix[0][0]);
+    int row = 0;
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            if(abs(matrix[i][j]) < lowestAbsoluteNumber){
+                lowestAbsoluteNumber = abs(matrix[i][j]);
+                row = i;
+            }
+        }
+    }
+
+    return row;
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[3][4];
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    printMatrix(matrix);
+    int row = findLowestAbsoluteNumberRow(matrix);
+    std::cout << "Row with lowest absolute number is: " << row << std::endl;
+    std::swap(matrix[0], matrix[row]);
+    std::cout << "Swapped matrix is: " << std::endl;
+    printMatrix(matrix);
+
+
+    return 0;
+}
+
+
+
+
+
+
+9. მოცემულია კვადრატული მატრიცა M[3x5]. შეადგინეთ პროგრამა რომელიც ცალ-ცალკე გამოთვლის მატრიცის კენტინდექსებიანი ელემენტების საშალო არითმეტიკულს და დანარჩენი
+ელემენტების ნამრავლს.
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+
+double findEvenIndexAverage(int matrix[3][5]){
+    double sum = 0;
+
+    for (int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            if ( i % 2 != 0){
+                sum += matrix[i][j];
+            }
+        }
+    }
+    return sum / 5;
+}
+
+double findOddIndexMultiplication(int matrix[3][5]){
+    double multiplication = 1;
+
+    for (int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            if ( i % 2 == 0){
+                multiplication *= matrix[i][j];
+            }
+        }
+    }
+    return multiplication;
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[3][5];
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    std::cout << findEvenIndexAverage(matrix) << std::endl;
+    std::cout << findOddIndexMultiplication(matrix) << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+10. მოცემულია კვადრატული მატრიცა A[4x4]. შეადგინეთ პროგრამა რომელიც ცალ-ცალკე გამოთვლის მატრიცის ლუწი მნიშვნელობის მქონე ელემტენების კუბების ჯამს და დანარჩენი
+ელემენტების ნახევარჯამს.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+
+void calculateEvenNumberCubeSum(int matrix[4][4]){
+    double sum = 0;
+    double halfSum = 0;
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            if (matrix[i][j] % 2 == 0){
+                sum += pow(matrix[i][j], 3);
+            }
+            else{
+                halfSum += matrix[i][j];
+            }
+        }
+    }
+    halfSum /= 2;
+    std::cout << "Sum of even numbers cube is: " << sum << std::endl;
+    std::cout << "Half of odd numbers sum is: " << halfSum << std::endl;   
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[4][4];
+
+    calculateEvenNumberCubeSum(matrix);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+11. მოცემულია კვადრატული მატრიცა A[4x4] და B[4x4] . შეადგინეთ პროგრამა რომელიც გამოთვლის თვითოეული მატრიცის არაუარყოფითი ელემტენის საშუალო არითმეტიკულს,
+მოძებნის მათ შორის უდიდესს და დაბეჭდავს მიღებულს შედეგს.
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+
+
+void printMatrix(int matrix[4][4]){
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void positiveAverage(int matrix[4][4], int secondMatrix[4][4]){
+    double firstMatrixPositiveSum = 0;
+    double firstMatrixPositiveCount = 0;
+    double secondMatrixPositiveSum = 0;
+    double secondMatrixPositiveCount = 0;
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            if(matrix[i][j] > 0){
+                firstMatrixPositiveSum += matrix[i][j];
+                firstMatrixPositiveCount++;
+            }
+            if(secondMatrix[i][j] > 0){
+                secondMatrixPositiveSum += secondMatrix[i][j];
+                secondMatrixPositiveCount++;
+            }
+        }
+    }
+
+    double firstMatrixPositiveAverage = firstMatrixPositiveSum / firstMatrixPositiveCount;
+    double secondMatrixPositiveAverage = secondMatrixPositiveSum / secondMatrixPositiveCount;
+
+    std::cout << "First matrix positive average is: " << firstMatrixPositiveAverage << std::endl;
+    std::cout << "Second matrix positive average is: " << secondMatrixPositiveAverage << std::endl;
+
+    double greater = firstMatrixPositiveAverage > secondMatrixPositiveAverage ? firstMatrixPositiveAverage : secondMatrixPositiveAverage;
+    std::cout << "Greater positive average is: " << greater << std::endl;
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[4][4];
+    int secondMatrix[4][4];
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            matrix[i][j] = rand() % 20 - 10;
+            secondMatrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    positiveAverage(matrix, secondMatrix);
+    
+    return 0;
+}
+
+
+
+
+
+
+12. მოცემულია კვადრატული მატრიცა M[5x5]. შეადგინეთ პროგრამა რომელიც გამოთვლის მატრიცის იმ ელემენტების ნამრავლსა და საშუალო არითმეტიკულს, რომელთაც გააჩნიათ
+ლუწი მნიშვნელობის მქონე სტრიქონის ინდექსის ნომრები და კენტი მნიშვნელობის მქონე სვეტის ინდექსის ნომრები.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+void calculateMultiplicationAndAverage(int matrix[5][5]){
+    double multiplication = 1;
+    
+    double sum = 0;
+    int counterForAverage = 0;
+
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            if (i % 2 == 0 && j % 2 != 0){
+                multiplication *= matrix[i][j];
+                sum += matrix[i][j];
+                counterForAverage++;
+            }
+        }
+    }
+
+    std::cout << "Multiplication of even index and odd index is: " << multiplication << std::endl;
+    std::cout << "Average of even index and odd index is: " << sum / counterForAverage << std::endl;
+
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[5][5];
+
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    calculateMultiplicationAndAverage(matrix);
+
+
+    return 0;
+}
+
+
+
+
+
+
+13. მოცემულია კვადრატული მატრიცა D[4x4]. შეადგინეთ პროგრამა რომელიც გამოთვლის მატრიცის ლუწი მნიშვნელობის მქონე კენტინდექსიანი ელემენტების კვადრატების
+ჯამს და დათვლის ელემენტების რაოდენობას, რომლებიც აღნიშნულ პირობას არ აკმაყოფილებენ.
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+
+void solution(int matrix[4][4]){
+    double squareSum = 0;
+    int nonCounter = 0;
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            if (matrix[i][j] % 2 == 0 && j % 2 != 0){
+                squareSum += pow(matrix[i][j], 2);
+            }
+            else{
+                nonCounter++;
+            }
+        }
+    }
+    std::cout << "Sum: " << squareSum << std::endl;
+    std::cout << "Non: " << nonCounter << std::endl;
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[4][4];
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+    solution(matrix);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+14. მოცემულია კვადრატული მატრიცა A[4x4]. შეადგინეთ პროგრამა რომელიც ცალ-ცალკე გამოთვლის მატრიცის მთავარი დიაგონალის ზემოთ და ქვემოთ განლაგებული ელემენტების
+საშუალო არითმეტიკულ მნიშვნელობებს, მიღებულ შედეგს ერთმანეთს შეადარებს და დაბეჭდავს მატრიცას და ყველა ეტაპის შედეგს.
+
+
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+
+void printMatrix(int matrix[4][4]){
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void printPrimaryDiagonal(int matrix[4][4]){
+    double oversum = 0;
+    int overcounter = 0;
+
+    double belowsum = 0;
+    int belowcounter = 0;
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            if(i < j){
+                std::cout << matrix[i][j] << " " << std::endl;
+                oversum += matrix[i][j];
+                overcounter++;
+            }
+            else if(i > j){
+                std::cout << matrix[i][j] << " " << std::endl;
+                belowsum += matrix[i][j];
+                belowcounter++;
+            }
+        }
+    }
+    oversum = oversum / overcounter;
+    belowsum = belowsum / belowcounter;
+
+    std::cout << "Over sum: " << oversum << std::endl;
+    std::cout << "Below sum: " << belowsum << std::endl;
+    
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[4][4];
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    printMatrix(matrix);
+    printPrimaryDiagonal(matrix);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+15. მოცემულია კვადრატული მატრიცა B[5x5]. შეადგინეთ პროგრამა რომელიც ცალ-ცალკე გამოთვლის მატრიცის არამთავარი დიაგონალის ზემოთ და ქვემოთ განლაგებული
+ელემენტების ნამრავლებს, მიღბულ შედეგს ერთმანეთს შეადარებს და დაბეჭდავს მატრიცას ყველა ეტაპის შედეგს.
+
+
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+
+void printMatrix(int matrix[5][5]){
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void printPrimaryDiagonal(int matrix[4][4]){
+    double oversum = 1;
+
+    double belowsum = 1;
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            if(i < j){
+                std::cout << matrix[i][j] << " " << std::endl;
+                oversum *= matrix[i][j];
+            }
+            else if(i > j){
+                std::cout << matrix[i][j] << " " << std::endl;
+                belowsum *= matrix[i][j];
+            }
+        }
+    }
+
+    std::cout << "Over multi: " << oversum << std::endl;
+    std::cout << "Below multi: " << belowsum << std::endl;
+    
+}
+
+int main() {
+    srand(time(NULL));
+    int matrix[4][4];
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            matrix[i][j] = rand() % 20 - 10;
+        }
+    }
+
+    printMatrix(matrix);
+    printPrimaryDiagonal(matrix);
+
+    return 0;
+}
+
+
+
+
+
+
